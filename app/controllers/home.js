@@ -14,8 +14,10 @@ router.get('/', function (req, res, next) {
     });
 });
 
+token ="https://chatbot117.herokuapp.com/webhook/"
 
-app.post('/webhook/', function(req, res){
+
+router.post('/webhook/', function(req, res){
   let messaging_events = req.body.entry[0].messaging_events;
   for (let i = 0; i < messaging_events.length; i++) {
       let event = messaging_events[i];
@@ -31,6 +33,8 @@ app.post('/webhook/', function(req, res){
 function sendText(sender, text) {
   let massageDatabase = {text: text}
   request({
-    url: ''
+    url: "https://graph.facebook.com/v2.6/me/messages",
+    qs: {access_token, token}
+    
   })
 }
