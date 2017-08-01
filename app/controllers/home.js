@@ -2,10 +2,6 @@ var express = require('express'),
   router = express.Router(),
   Article = require('../models/article');
 
-module.exports = function (app) {
-  app.use('/', router);
-};
-
 router.get('/', function (req, res, next) {
   var articles = [new Article(), new Article()];
     res.render('index', {
@@ -14,7 +10,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-token ="https://chatbot117.herokuapp.com/webhook/"
+token ="EAAKSZA54OsEgBANQLMZBmNTMnhmn1GZBBQSSkoeBhn63cyD8IJUfaWIZBrVefueZBGKTUzXLRnGanrPCdcBCgdgAZClJtndo0GsdZCXWXmeS8JUaEGfkgGQdvO5CIzLxZAqgiN8t0ojvgZAALiCQTkhHrmeAej69DO6ZCxvvZAg8iFn1hdEQFJNKUkJ"
 
 
 router.post('/webhook/', function(req, res){
@@ -30,11 +26,14 @@ router.post('/webhook/', function(req, res){
    res.sendStatus(200);
 });
 
+// stop for 10 sec ok?
 function sendText(sender, text) {
   let massageDatabase = {text: text}
   request({
     url: "https://graph.facebook.com/v2.6/me/messages",
-    qs: {access_token, token}
-    
+    qs: {access_token, token},
+    method: 'POST'
   })
 }
+
+module.exports = router;
