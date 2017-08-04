@@ -14,11 +14,9 @@ router.get('/', function (req, res, next) {
 
 let token ="EAAKSZA54OsEgBANQLMZBmNTMnhmn1GZBBQSSkoeBhn63cyD8IJUfaWIZBrVefueZBGKTUzXLRnGanrPCdcBCgdgAZClJtndo0GsdZCXWXmeS8JUaEGfkgGQdvO5CIzLxZAqgiN8t0ojvgZAALiCQTkhHrmeAej69DO6ZCxvvZAg8iFn1hdEQFJNKUkJ"
 
-// the home page again so it confict to the above one
-router.get('', function(req, res){
-    res.send("hi Im a chat bot")   
-})
-
+// the home page again so it confict to the above one 
+// and '' same as '/'
+ 
 
 router.get('/webhook', function(req,res){
   if (req.query['hub.verify_token'] === "Generator-Express MVC"); {
