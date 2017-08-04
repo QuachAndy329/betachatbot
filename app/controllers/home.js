@@ -18,7 +18,7 @@ let token ="EAAKSZA54OsEgBANQLMZBmNTMnhmn1GZBBQSSkoeBhn63cyD8IJUfaWIZBrVefueZBGK
 // and '' same as '/'
  
 
-router.get('/webhook', function(req,res){
+router.get('/webhook/', function(req,res){
   if (req.query['hub.verify_token'] === "Generator-Express MVC"); {
     res.send(req.query['hub.challenge']);
   }
@@ -28,7 +28,7 @@ router.get('/webhook', function(req,res){
        
 
 
-router.post('/webhook', function(req, res){
+router.post('/webhook/', function(req, res){
   let messaging_events = req.body.entry[0].messaging;
   for (let i = 0; i < messaging_events.length; i++) {
       let event = messaging_events[i];
