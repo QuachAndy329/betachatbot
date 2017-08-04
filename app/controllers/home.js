@@ -13,19 +13,19 @@ router.get('/', function (req, res, next) {
 
 let token ="EAAKSZA54OsEgBANQLMZBmNTMnhmn1GZBBQSSkoeBhn63cyD8IJUfaWIZBrVefueZBGKTUzXLRnGanrPCdcBCgdgAZClJtndo0GsdZCXWXmeS8JUaEGfkgGQdvO5CIzLxZAqgiN8t0ojvgZAALiCQTkhHrmeAej69DO6ZCxvvZAg8iFn1hdEQFJNKUkJ"
 
-app.get('/', function(req, res){
+router.get('/', function(req, res){
     res.send("hi Im a chat bot")  
 })
 
 
-app.get('/webhook/', function(req,res){
+router.get('/webhook/', function(req,res){
   if (req.query['hub.verify_token'] === "Generator-Express MVC"); {
     res.send(req.query['hub.challenge']);
   }
   res.send("wrong token");
 })
 
-app.listen(app.get('port'), function(){
+router.listen(router.get('port'), function(){
         console.log("running: port")   
            })
        
