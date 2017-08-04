@@ -3,6 +3,7 @@ var express = require('express'),
   router = express.Router(),
   Article = require('../models/article');
 
+// the home page
 router.get('/', function (req, res, next) {
   var articles = [new Article(), new Article()];
     res.render('index', {
@@ -13,12 +14,13 @@ router.get('/', function (req, res, next) {
 
 let token ="EAAKSZA54OsEgBANQLMZBmNTMnhmn1GZBBQSSkoeBhn63cyD8IJUfaWIZBrVefueZBGKTUzXLRnGanrPCdcBCgdgAZClJtndo0GsdZCXWXmeS8JUaEGfkgGQdvO5CIzLxZAqgiN8t0ojvgZAALiCQTkhHrmeAej69DO6ZCxvvZAg8iFn1hdEQFJNKUkJ"
 
+// the home page again so it confict to the above one
 router.get('/', function(req, res){
-    res.send("hi Im a chat bot")  
+    res.send("hi Im a chat bot")   
 })
 
 
-router.get('/webhook/', function(req,res){
+router.get('/webhook', function(req,res){
   if (req.query['hub.verify_token'] === "Generator-Express MVC"); {
     res.send(req.query['hub.challenge']);
   }
@@ -28,7 +30,7 @@ router.get('/webhook/', function(req,res){
        
 
 
-router.post('/webhook/', function(req, res){
+router.post('/webhook', function(req, res){
   let messaging_events = req.body.entry[0].messaging;
   for (let i = 0; i < messaging_events.length; i++) {
       let event = messaging_events[i];
