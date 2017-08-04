@@ -25,9 +25,6 @@ router.get('/webhook/', function(req,res){
   res.send("wrong token");
 })
 
-router.listen(router.get('port'), function(){
-        console.log("running: port")   
-           })
        
 
 
