@@ -7,7 +7,7 @@ var express = require('express'),
 router.get('/', function (req, res, next) {
   var articles = [new Article(), new Article()];
     res.render('index', {
-      title: 'Generator-Express MVC',
+      title: 'Generator-Exress MVC',
       articles: articles
     });
 });
@@ -19,7 +19,7 @@ let token ="EAAKSZA54OsEgBANQLMZBmNTMnhmn1GZBBQSSkoeBhn63cyD8IJUfaWIZBrVefueZBGK
  
 
 router.get('/webhook/', function(req,res){
-  if (req.query['hub.verify_token'] === "Generator-Express MVC"); {
+  if (req.query['hub.verify_token'] === "this_is_my_token"); {
     res.send(req.query['hub.challenge']);
   }
   res.send("wrong token");
@@ -63,8 +63,4 @@ function sendText(sender, text) {
   })
 }
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 655cd6e73cf8aee63724f5b49b0aafe3601f2ec4
