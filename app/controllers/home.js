@@ -63,4 +63,8 @@ function sendText(sender, text) {
   })
 }
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 655cd6e73cf8aee63724f5b49b0aafe3601f2ec4
